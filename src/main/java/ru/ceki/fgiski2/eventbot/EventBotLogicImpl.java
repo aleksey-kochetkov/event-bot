@@ -20,6 +20,9 @@ public class EventBotLogicImpl implements EventBotLogic {
                 tags.add(tag.substring(1));
             }
         }
+        for (String tag : tags) {
+            text = text.replaceAll('#' + tag, "");
+        }
         return new EventDto(text, tags);
     }
 }
