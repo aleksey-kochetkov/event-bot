@@ -1,7 +1,11 @@
 package ru.ceki.fgiski2.eventbot;
 
+import java.util.Queue;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.telegram.telegrambots.bots.TelegramLongPollingBot;
+import org.telegram.telegrambots.meta.api.objects.Update;
+import ru.ceki.fgiski2.eventbot.dto.QueueElement;
 
 @Service
 public class EventBot extends TelegramLongPollingBot {

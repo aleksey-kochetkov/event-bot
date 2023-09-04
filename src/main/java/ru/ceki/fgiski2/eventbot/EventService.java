@@ -1,0 +1,4 @@
+package ru.ceki.fgiski2.eventbot;
+
+public class EventService {
+}

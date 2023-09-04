@@ -12,6 +12,8 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 public class EventBotApplication {
     @Autowired
     private EventBot eventBot;
+    @Autowired
+    private EventService eventService;
 
     public static void main(String[] args) {
         SpringApplication.run(EventBotApplication.class);
