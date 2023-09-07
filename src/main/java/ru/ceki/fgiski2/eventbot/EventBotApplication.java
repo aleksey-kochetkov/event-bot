@@ -22,8 +22,9 @@ public class EventBotApplication {
     @Bean
     public CommandLineRunner init() {
         return args -> {
-          TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
+                    TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
           this.eventService.setBotSession(botsApi.registerBot(eventBot));
+          this.eventService.start();
         };
     }
 }
