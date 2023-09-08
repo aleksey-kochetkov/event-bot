@@ -10,6 +10,7 @@ import org.telegram.telegrambots.meta.generics.BotSession;
 public class EventService {
     private static final Logger LOGGER = LoggerFactory.getLogger(EventService.class);
     private BotSession botSession;
+    private final Queue<QueueElement> queue = new NormalizedBlockingQueue();
     @Autowired
     private EventBotLogic logic;
 
@@ -19,12 +20,12 @@ public class EventService {
     
     public void start() {
         Runtime.getRuntime().addShutdownHook(new Thread(this::waitToShutdown));
-    }
+            }
 
     public void waitToShutdown() {
         try {
             this.stopBotSession();
-        } catch (InterruptedException exception) {
+                    } catch (InterruptedException exception) {
             throw new RuntimeException(exception);
         }
     }
