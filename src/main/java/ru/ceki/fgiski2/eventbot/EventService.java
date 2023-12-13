@@ -14,6 +14,7 @@ import ru.ceki.fgiski2.eventbot.dto.QueueElement;
 public class EventService {
     private static final Logger LOGGER = LoggerFactory.getLogger(EventService.class);
     private BotSession botSession;
+    private CountDownLatch running;
     private final Queue<QueueElement> queue = new NormalizedBlockingQueue<>(16);
     @Autowired
     private EventBotLogic logic;
