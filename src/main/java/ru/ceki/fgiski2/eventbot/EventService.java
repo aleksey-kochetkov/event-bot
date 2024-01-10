@@ -1,6 +1,7 @@
 package ru.ceki.fgiski2.eventbot;
 
 import java.util.Queue;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
