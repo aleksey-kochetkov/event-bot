@@ -42,4 +42,8 @@ public class EventService {
             this.botSession.stop();
         }
     }
+
+    public Queue<QueueElement> getQueue() {
+        return this.queue;
+    }
 }

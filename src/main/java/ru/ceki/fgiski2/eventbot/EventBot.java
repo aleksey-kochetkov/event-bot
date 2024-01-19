@@ -14,6 +14,10 @@ public class EventBot extends TelegramLongPollingBot {
     @Value("${event-bot.bot-token}")
     private String botToken;
     private Queue<QueueElement> consumer;
+    
+    public void setQueue(Queue<QueueElement> consumer) {
+        this.consumer = consumer;
+    }
 
     @Override
     public String getBotUsername() {
