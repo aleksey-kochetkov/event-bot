@@ -26,12 +26,17 @@ public class EventService {
     
     public void start() {
         Runtime.getRuntime().addShutdownHook(new Thread(this::waitToShutdown));
-            }
+        this.running = new CountDownLatch(1);
+    }
 
     public void waitToShutdown() {
         try {
             this.stopBotSession();
             this.running.await(5, TimeUnit.SECONDS);
+//            LOGGER.info("queue.size():{}", this.queue.size());
+            if (this.queue.size() > 0) {
+                System.out.format("queue.size():%d%n", this.queue.size());
+            }
         } catch (InterruptedException exception) {
             throw new RuntimeException(exception);
         }
