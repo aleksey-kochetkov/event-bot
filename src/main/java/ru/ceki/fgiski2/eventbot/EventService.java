@@ -27,6 +27,10 @@ public class EventService {
     public void start() {
         Runtime.getRuntime().addShutdownHook(new Thread(this::waitToShutdown));
         this.running = new CountDownLatch(1);
+        new Thread(this::run).start();
+    }
+
+    public void run() {
     }
 
     public void waitToShutdown() {
